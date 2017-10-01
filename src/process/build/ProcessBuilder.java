@@ -1,7 +1,7 @@
 package process.build;
 import java.lang.*;
 import java.lang.management.ManagementFactory;
-import java.lang.management.OperatingSystemMXBean;
+
 
 public class ProcessBuilder {
 
@@ -13,14 +13,16 @@ public class ProcessBuilder {
 
 	    System.out.println(runtime.availableProcessors());
 
-        OperatingSystemMXBean mxBean = (com.sun.management.OperatingSystemMXBean)
+        com.sun.management.OperatingSystemMXBean mxBean = (com.sun.management.OperatingSystemMXBean)
                 ManagementFactory.getOperatingSystemMXBean();
 
 
-        for (int i = 0; i < 25; i++)
-        {
-            System.out.println(mxBean.);
-            System.out.println(mxBean.getSystemCpuLoad());
-        }
+        System.out.println(mxBean.getFreePhysicalMemorySize());
+        System.out.println(mxBean.getCommittedVirtualMemorySize());
+        System.out.println(mxBean.getProcessCpuTime());
+        System.out.println(mxBean.getProcessCpuLoad());
+
+
+
     }
 }
